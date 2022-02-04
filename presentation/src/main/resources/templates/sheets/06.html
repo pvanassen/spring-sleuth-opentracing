@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Fragments</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+
+<body>
+<div th:fragment="header">How does it work in the background?</div>
+<div th:fragment="content">
+    <ul>
+        <li>On each request a span-id is created (or for parts of your code)</li>
+        <li>If there is no trace-id it is set to the span-id</li>
+        <li>Each log message will contain: <pre>[{appname},{trace-id},{span-id}]</pre></li>
+        <li>Statistics about each span and the trace as a whole can be measured. (Zipkin)</li>
+    </ul>
+</div>
+</body>
+
+</html>

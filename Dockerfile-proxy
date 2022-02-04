@@ -1,0 +1,26 @@
+# Download all dependencies for the pom
+FROM maven:3.8.4-openjdk-17 AS depencencies-downloader
+COPY settings.xml /root/.m2/
+COPY pom.xml .
+COPY presentation/pom.xml presentation/pom.xml
+COPY proxy/pom.xml proxy/pom.xml
+RUN mvn dependency:go-offline -T40
+
+# Copy all the downloaded dependencies from previous and build the source. Effect is, if the pom does not change, little will be downloaded.
+FROM maven:3.8.4-openjdk-17 AS jar-builder
+COPY --from=depencencies-downloader /root/.m2/ /root/.m2/
+COPY --from=depencencies-downloader pom.xml pom.xml
+COPY presentation presentation
+COPY proxy proxy
+RUN mvn install -DskipTests
+
+FROM eclipse-temurin:17-jre-alpine
+
+COPY --from=jar-builder proxy/target/*.jar /app.jar
+
+EXPOSE 8080
+
+USER 1000
+
+ENTRYPOINT ["java", "-jar", "/app.jar"]
+

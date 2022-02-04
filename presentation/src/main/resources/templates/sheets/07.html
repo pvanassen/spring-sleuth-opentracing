@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Fragments</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+
+<body>
+<div th:fragment="header">Demo!</div>
+<div th:fragment="content">
+    <ul>
+        <li><a href="http://localhost:5601/" target="_blank">Kibana</a></li>
+        <li><a href="http://localhost:9411/" target="_blank">Zipkin-ui</a></li>
+    </ul>
+</div>
+</body>
+
+</html>

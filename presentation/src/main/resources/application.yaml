@@ -1,0 +1,17 @@
+server.port: 8081
+spring:
+  zipkin:
+    baseUrl: http://localhost:9411
+  application:
+    name: presentation
+  sleuth:
+    web:
+      skip-pattern: "/api-docs.*|/swagger.*|/favicon.ico|/hystrix.stream"
+  thymeleaf:
+    encoding: UTF-8
+    prefix: classpath:/templates/
+    cache: false
+    check-template-location: true
+    suffix: .html
+
+logstash.hostname: localhost

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Fragments</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+
+<body>
+<div th:fragment="header">What is the relation with Spring Sleuth?</div>
+<div th:fragment="content">
+    <ul>
+        <li>Spring Sleuth is Open Tracing compatible</li>
+        <li>A developer can call Open Tracing API or Spring Sleuth API</li>
+        <li>Spring Sleuth can also help with MDC context</li>
+        <li>As Spring does, it is all just configuration</li>
+    </ul>
+</div>
+</body>
+
+</html>

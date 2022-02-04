@@ -1,0 +1,10 @@
+server.port: 8080
+spring:
+  zipkin:
+    baseUrl: http://localhost:9411
+  application:
+    name: proxy
+  sleuth:
+    web:
+      skip-pattern: "/api-docs.*|/swagger.*|/favicon.ico|/hystrix.stream"
+logstash.hostname: localhost

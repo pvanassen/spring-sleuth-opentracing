@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Fragments</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+
+<body>
+<div th:fragment="header">Terminology!</div>
+<div th:fragment="content">
+    <ul>
+        <li>Span: A basic unit of work. In case of a microservice, the whole request/response cycle within this service</li>
+        <li>Trace: A set of spans related to one request (like X-Correlation-Id)</li>
+    </ul>
+</div>
+</body>
+
+</html>

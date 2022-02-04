@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Fragments</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+
+<body>
+<div th:fragment="header">How can Spring Sleuth help me in my work?</div>
+<div th:fragment="content">
+    <ul>
+        <li>Log statements linked to request (like X-Correlation-Id)</li>
+        <li>Passing headers from server to client</li>
+        <li>Managing MDC in WebFlux environment</li>
+        <li>Performance measurements</li>
+    </ul>
+</div>
+</body>
+
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Spring Sleuth / Open Tracing</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link href='https://fonts.googleapis.com/css?family=Rubik' rel='stylesheet'>
+    <style>
+        html,
+        body {
+            margin:0;
+            padding:0;
+            height:100%;
+            font-family: Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
+            color: #001f60;
+        }
+        #container {
+            min-height:100%;
+            position:relative;
+        }
+        #header {
+            padding: 10px;
+            padding-top: 50px;
+            padding-left: 60px;
+            font-size: 28pt;
+            font-weight: bold;
+        }
+        #body {
+            padding:10px;
+            padding-left: 60px;
+            padding-bottom:58px;   /* Height of the footer */
+        }
+        #footer {
+            position:absolute;
+            bottom:0;
+            width:100%;
+            height:58px;
+            background: #1e2fb1;
+        }
+        .footer-right {
+            position: absolute;
+            width: 1423px;
+            height: 58px;
+            right: 0;
+            color: white;
+            font-family: 'Rubik';
+            font-size: 14px;
+        }
+        .footer-text {
+            position: absolute;
+            height: 58px;
+            padding-top: 20px;
+            right: 120px;
+            text-align: center;
+        }
+        .footer-page {
+            position: absolute;
+            height: 58px;
+            padding-top: 20px;
+            right: 60px;
+            text-align: center;
+        }
+
+    </style>
+</head>
+
+<body>
+
+<div id="container">
+    <div id="header"><div th:replace="@{'sheets/' + ${template}} :: header"></div></div>
+    <div id="body">
+        <div th:replace="@{'sheets/' + ${template}} :: content"></div>
+    </div>
+    <div id="footer">
+        <div class="blue">&nbsp;</div>
+        <div class="footer-right">
+            <div class="footer-text">Spring Sleuth Open Tracing presentation</div>
+            <div class="footer-page"><span th:text="${page}">1</span></div>
+        </div>
+    </div>
+</div>
+
+</body>
+<script th:inline="javascript">
+    var nextPage = /*[[${nextPage}]]*/ 'next';
+    var prevPage = /*[[${prevPage}]]*/ 'prev';
+    document.addEventListener('keydown', function(e) {
+        switch (e.code) {
+            case 'ArrowLeft':
+                window.location.href = "/sheets/" + prevPage + ".html"
+                break;
+            case 'ArrowRight':
+                window.location.href = "/sheets/" + nextPage + ".html"
+                break;
+        }
+    });
+</script>
+
+</html>

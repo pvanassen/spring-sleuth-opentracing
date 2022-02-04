@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Fragments</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+
+<body>
+<div th:fragment="header">What is Open Tracing?</div>
+<div th:fragment="content">
+    <ul>
+        <li>Part of OpenTelemetry</li>
+        <li>Vendor-neutral APIs and instrumentation for distributed tracing</li>
+        <li>Specification/API that a developers code will interact with, like Slf4j does for logging</li>
+        <li>Specification of the wire format, what headers are set and read etc. </li>
+    </ul>
+</div>
+</body>
+
+</html>
